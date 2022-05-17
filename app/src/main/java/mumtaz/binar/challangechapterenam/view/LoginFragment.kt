@@ -114,7 +114,7 @@ class LoginFragment : Fragment() {
             override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
                 if (response.isSuccessful){
 
-                    Toast.makeText(requireContext(), "Login Sukses", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Login Berhasil", Toast.LENGTH_SHORT).show()
                 }else{
                     toast = "Data yang dimasukkan salah!"
                     custom()

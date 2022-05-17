@@ -39,7 +39,7 @@ class FavoriteFragment : Fragment() {
         }
         userManager = UserManager(requireContext())
         userManager.userUsername.asLiveData().observe(requireActivity()){
-            view.welcomefav.text = it.toString()
+            view.tvfavusername.text = "Hi $it"
         }
         view.home.setOnClickListener {
             view.findNavController().navigate(R.id.action_favoriteFragment_to_homeFragment)
@@ -48,7 +48,7 @@ class FavoriteFragment : Fragment() {
             view.findNavController().navigate(R.id.action_favoriteFragment_to_profileFragment)
         }
 
-        view.listfav.layoutManager = LinearLayoutManager(requireContext())
+        view.rcfav.layoutManager = LinearLayoutManager(requireContext())
         GlobalScope.launch {
             val listdata = database?.getFavorite()?.getAllFav()
             requireActivity().runOnUiThread {
@@ -61,7 +61,7 @@ class FavoriteFragment : Fragment() {
                         bund.putParcelable("detailfilmfavorite", it)
                         view.findNavController().navigate(R.id.action_favoriteFragment_to_detailFragment,bund)
                     }
-                    view.listfav.adapter = adapterfav
+                    view.rcfav.adapter = adapterfav
                     adapterfav.setDataFav(it!!)
                 }
             }

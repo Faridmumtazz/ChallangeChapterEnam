@@ -16,7 +16,7 @@
 
         <TextView
             android:text="Username"
-            android:id="@+id/welcomefav"
+            android:id="@+id/tvfavusername"
             android:textSize="20sp"
             android:layout_marginStart="20dp"
             android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listfav"
+                android:id="@+id/rcfav"
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
 

@@ -20,6 +20,7 @@ class DetailFragment : Fragment() {
     lateinit var favorite : String
     var database : FavoriteDatabase? = null
     var filmfav : FavoriteFilm? = null
+
     lateinit var id : String
     lateinit var title : String
     lateinit var director : String
@@ -44,12 +45,12 @@ class DetailFragment : Fragment() {
             view.textcreated.text = getfilm?.createdAt
             view.textdesc.text = getfilm?.synopsis
             Glide.with(requireContext()).load(getfilm?.image).into(view.gambar1)
-            id = getfilm.id.toString()
-            title = getfilm.title.toString()
-            director = getfilm.director.toString()
-            createdAt = getfilm.createdAt.toString()
-            synopsis = getfilm.synopsis.toString()
-            image = getfilm.image.toString()
+            id = getfilm.id
+            title = getfilm.title
+            director = getfilm.director
+            createdAt = getfilm.createdAt
+            synopsis = getfilm.synopsis
+            image = getfilm.image
         }
 
         if (getfavfilm != null){
